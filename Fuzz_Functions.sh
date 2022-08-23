@@ -38,21 +38,21 @@ apifuzz(){
 }
 
 dirfuzz(){
-echo -e "\nCOMMON FUZZING\n"
-ffuf -v -fc 404,402,405,207,502,500 -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/common.txt
+  echo -e "\nCOMMON FUZZING\n"
+  ffuf -v -fc 404,402,405,207,502,500 -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/common.txt
 
-echo -e "\nROBOTS DISALLOWED\n"
-ffuf -v -fc 404,402,405,207,502,500 -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/RobotsDisallowed-Top1000.txt
+  echo -e "\nROBOTS DISALLOWED\n"
+  ffuf -v -fc 404,402,405,207,502,500 -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/RobotsDisallowed-Top1000.txt
 
-echo -e "\nRAFT LARGE DIRECTORIES\n"
-ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ/ -w /usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt
+  echo -e "\nRAFT LARGE DIRECTORIES\n"
+  ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ/ -w /usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt
 
-echo -e "\n2.3-MEDIUM DIRECTORIES\n"
-ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ/ -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+  echo -e "\n2.3-MEDIUM DIRECTORIES\n"
+  ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ/ -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
 
-echo -e "\nHTTPARCHIVE DIRECTORIES\n"
-ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ/ -w /usr/share/seclists/Discovery/Web-Content/httparchive_dirs.txt
+  echo -e "\nHTTPARCHIVE DIRECTORIES\n"
+  ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ/ -w /usr/share/seclists/Discovery/Web-Content/httparchive_dirs.txt
 
-echo -e "\nONE FOR ALL SHORT DIRECTORIES\n"
-ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ/ -w /usr/share/seclists/Discovery/Web-Content/onelistforallshort.txt
+  echo -e "\nONE FOR ALL SHORT DIRECTORIES\n"
+  ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ/ -w /usr/share/seclists/Discovery/Web-Content/onelistforallshort.txt
 }
