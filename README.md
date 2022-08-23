@@ -5,6 +5,9 @@ BetterFuzz is a collection of functions that i regularly use to fuzz endpoints a
 You can simply call the functions against the base URL like this (notice the slash at the end)
 ```bash
 dirfuzz [URL/PATH/]
+
 filefuzz [URL/PATH/]
+
 apifuzz [URL/PATH/]
 ```
+Moreover, you will need to install the ```seclists``` project, and download some extra wordlists I put together from the "Wordlists" folder
