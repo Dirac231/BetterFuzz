@@ -12,13 +12,13 @@ filefuzz(){
   if [[ $REPLY =~ ^[php]$ ]]
   then
     echo -e "\nCGI / PHP FILES\n"
-    ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ -w /home/dirac/HACKING/OSCP/DOCUMENTS/WORDLISTS/cgi_php.txt
+    ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/cgi_php.txt
   exit
 
   elif [[ $REPLY =~ ^[iis]$ ]]
   then
     echo -e "\nCOMMON IIS\n"
-    ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ -w /home/dirac/HACKING/OSCP/TOOLS/iisfinal.txt
+    ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/iisfinal.txt
     
     echo -e "\nIIS FILES\n"
     ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/httparchive_IIS.txt
@@ -27,7 +27,7 @@ filefuzz(){
   elif [[ $REPLY =~ ^[jsp]$ ]]
   then
     echo -e "\nDO / JSP FILES\n"
-    ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ -w /home/dirac/HACKING/OSCP/DOCUMENTS/WORDLISTS/httparchive_jsp.txt
+    ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/httparchive_jsp.txt
     exit
   fi
 }
