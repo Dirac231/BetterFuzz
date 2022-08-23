@@ -10,4 +10,4 @@ filefuzz [URL/PATH/]
 
 apifuzz [URL/PATH/]
 ```
-Moreover, you will need to install the ```seclists``` project, and download some extra wordlists I put together from the "Wordlists" folder
+Moreover, you will need to install the ```seclists``` project, and download some extra wordlists from the "Wordlists" folder
