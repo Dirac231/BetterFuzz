@@ -34,7 +34,7 @@ filefuzz(){
 
 apifuzz(){
   echo -e "\nAPI SEARCHING\n"
-  ffuf -v -fc 404,402,405,207,502,500 -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/apilist.txt
+  ffuf -v -fc 404,402,405,207,502,500 -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/apitrun.txt
 }
 
 dirfuzz(){
