@@ -8,14 +8,14 @@ filefuzz(){
   echo -e "\nRAFT LARGE FILES\n"
   ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-large-files.txt
 
-  read REPLY\?"SELECT BACKEND FOR BIASED FUZZING: (php, iis, jsp)"
-  if [[ $REPLY =~ ^[php]$ ]]
+  read REPLY\?"SELECT BACKEND FOR BIASED FUZZING: (php=1, iis=2, jsp=3)"
+  if [[ $REPLY =~ ^[1]$ ]]
   then
     echo -e "\nCGI / PHP FILES\n"
     ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/cgi_php.txt
   exit
 
-  elif [[ $REPLY =~ ^[iis]$ ]]
+  elif [[ $REPLY =~ ^[2]$ ]]
   then
     echo -e "\nCOMMON IIS\n"
     ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/iisfinal.txt
@@ -24,7 +24,7 @@ filefuzz(){
     ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/httparchive_IIS.txt
     exit
 
-  elif [[ $REPLY =~ ^[jsp]$ ]]
+  elif [[ $REPLY =~ ^[3]$ ]]
   then
     echo -e "\nDO / JSP FILES\n"
     ffuf -v -fc 404,402,405,207,502,500  -r -c -u $1FUZZ -w /usr/share/seclists/Discovery/Web-Content/httparchive_jsp.txt
